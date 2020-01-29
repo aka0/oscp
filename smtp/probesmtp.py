@@ -18,11 +18,17 @@ def main():
         usernames = [u.rstrip() for u in uf]
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((args.smtp, 25))
 
-        for username in usernames:
-            s.send(f'VRFY {username} \r\n'.encode())
-            print(s.recv(1024))
+        try:
+            print('Probing {}'.format(args.smtp))
+            s.connect((args.smtp, 25))
+
+            for username in usernames:
+                s.send(f'VRFY {username} \r\n'.encode())
+                print(s.recv(1024))
+
+        except ConnectionRefusedError as e:
+            print('ERROR {}: {}'.format(args.smtp, str(e)))
 
 
 if __name__ == "__main__":
