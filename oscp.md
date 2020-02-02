@@ -40,8 +40,12 @@ Add addtional vulnerability scanning capability to NMAP
 
 [Vulners](https://github.com/vulnersCom/nmap-vulners)
 
+msfvenom *replaced msfpayload in older articles*
+
+[Msfvenom Cheat Sheet]https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/()
 
 ## Useful Bookmarks
+Detailed explanation on how tools/exploits work.
 
 ### Windows
 [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
@@ -51,3 +55,6 @@ Add addtional vulnerability scanning capability to NMAP
 
 ### Oracle
 [Variations in Exploit methods between Linux and Windows](https://www.blackhat.com/presentations/bh-usa-03/bh-us-03-litchfield-paper.pdf)
+
+### Metasploit
+[Deep Dive Into Stageless Meterpreter Payloads](https://blog.rapid7.com/2015/03/25/stageless-meterpreter-payloads/)
