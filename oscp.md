@@ -6,9 +6,9 @@ My notes on OSCP
 ### Lab
 Setup a good folder/file naming structure to organize your work. I have three main folders:
 - exploits: work-in-progress info
--- host1
--- host2
--- _recon: network-wide scans data
+ - host1
+ - host2
+ - _recon: network-wide scans data
 - network1: contains finished hosts under network1 (moved from exploits directory)
 - network2: contains finished hosts under network2
 - reports
