@@ -2,6 +2,18 @@
 My notes on OSCP
  
 ## CLI Notes
+
+### Lab
+Setup a good folder/file naming structure to organize your work. I have three main folders:
+- exploits: work-in-progress info
+-- host1
+-- host2
+-- _recon: network-wide scans data
+- network1: contains finished hosts under network1 (moved from exploits directory)
+- network2: contains finished hosts under network2
+- reports
+
+
 Setup shell aliases for connecting to OVPN & Windows machine
 Under `.bashrc` in Kali
 ```
@@ -10,6 +22,14 @@ lab="openvpn YOUR_OVPN_FILE.ovpn"
 win="rdesktop -u username -p password 1.2.3.4"
 source .bashrc
 ```
+
+### Kali
+Search exploits
+```
+searchsploit wordpress escalation
+...snip...
+cp /usr/share/exploitdb/exploits/php/webapps/12345.txt ./
+````
 
 ## Useful Tools
 MS17-010
