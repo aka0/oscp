@@ -42,7 +42,7 @@ Add addtional vulnerability scanning capability to NMAP
 
 msfvenom *replaced msfpayload in older articles*
 
-[Msfvenom Cheat Sheet]https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/()
+[Msfvenom Cheat Sheet](https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/)
 
 ## Useful Bookmarks
 Detailed explanation on how tools/exploits work.
