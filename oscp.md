@@ -63,6 +63,7 @@ Detailed explanation on how tools/exploits work.
 ### Shell Code
 [0x7 Exploit Tutorial: Bad Character Analysis](http://www.primalsecurity.net/0x7-exploit-tutorial-bad-character-analysis/)
 
+```python
 bad_chars = ""
 bad_chars += "x01x02x03x04x05x06x07x08x09x0ax0bx0cx0dx0ex0fx10"
 bad_chars += "x11x12x13x14x15x16x17x18x19x1ax1bx1cx1dx1ex1fx20"
@@ -80,3 +81,4 @@ bad_chars += "xc1xc2xc3xc4xc5xc6xc7xc8xc9xcaxcbxccxcdxcexcfxd0"
 bad_chars += "xd1xd2xd3xd4xd5xd6xd7xd8xd9xdaxdbxdcxddxdexdfxe0"
 bad_chars += "xe1xe2xe3xe4xe5xe6xe7xe8xe9xeaxebxecxedxeexefxf0"
 bad_chars += "xf1xf2xf3xf4xf5xf6xf7xf8xf9xfaxfbxfcxfdxfexff"
+```
