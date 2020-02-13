@@ -58,3 +58,25 @@ Detailed explanation on how tools/exploits work.
 
 ### Metasploit
 [Deep Dive Into Stageless Meterpreter Payloads](https://blog.rapid7.com/2015/03/25/stageless-meterpreter-payloads/)
+[Offensive Msfvenom: From Generating Shellcode to Creating Trojans] (https://medium.com/@PenTest_duck/offensive-msfvenom-from-generating-shellcode-to-creating-trojans-4be10179bb86)
+
+### Shell Code
+[0x7 Exploit Tutorial: Bad Character Analysis](http://www.primalsecurity.net/0x7-exploit-tutorial-bad-character-analysis/)
+
+bad_chars = ""
+bad_chars += "x01x02x03x04x05x06x07x08x09x0ax0bx0cx0dx0ex0fx10"
+bad_chars += "x11x12x13x14x15x16x17x18x19x1ax1bx1cx1dx1ex1fx20"
+bad_chars += "x21x22x23x24x25x26x27x28x29x2ax2bx2cx2dx2ex2fx30"
+bad_chars += "x31x32x33x34x35x36x37x38x39x3ax3bx3cx3dx3ex3fx40"
+bad_chars += "x41x42x43x44x45x46x47x48x49x4ax4bx4cx4dx4ex4fx50"
+bad_chars += "x51x52x53x54x55x56x57x58x59x5ax5bx5cx5dx5ex5fx60"
+bad_chars += "x61x62x63x64x65x66x67x68x69x6ax6bx6cx6dx6ex6fx70"
+bad_chars += "x71x72x73x74x75x76x77x78x79x7ax7bx7cx7dx7ex7fx80"
+bad_chars += "x81x82x83x84x85x86x87x88x89x8ax8bx8cx8dx8ex8fx90"
+bad_chars += "x91x92x93x94x95x96x97x98x99x9ax9bx9cx9dx9ex9fxa0"
+bad_chars += "xa1xa2xa3xa4xa5xa6xa7xa8xa9xaaxabxacxadxaexafxb0"
+bad_chars += "xb1xb2xb3xb4xb5xb6xb7xb8xb9xbaxbbxbcxbdxbexbfxc0"
+bad_chars += "xc1xc2xc3xc4xc5xc6xc7xc8xc9xcaxcbxccxcdxcexcfxd0"
+bad_chars += "xd1xd2xd3xd4xd5xd6xd7xd8xd9xdaxdbxdcxddxdexdfxe0"
+bad_chars += "xe1xe2xe3xe4xe5xe6xe7xe8xe9xeaxebxecxedxeexefxf0"
+bad_chars += "xf1xf2xf3xf4xf5xf6xf7xf8xf9xfaxfbxfcxfdxfexff"
