@@ -45,9 +45,16 @@ Add addtional vulnerability scanning capability to NMAP
 [Vulners](https://github.com/vulnersCom/nmap-vulners)
 
 ### Web
-gobuster
 
 [Gobuster Package Description](https://tools.kali.org/web-applications/gobuster)
+Example
+```bash
+gobuster -k -e -u https://{URL} -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+```
+
+[CODE INJECTION IN MONGODB](https://www.objectrocket.com/blog/mongodb/code-injection-in-mongodb/)
+
+[Exploiting PHP File Inclusion](https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/)
 
 ## Useful Tools / Cheatsheets
 Handy tools/cheatsheets for lab
@@ -60,6 +67,9 @@ msfvenom *replaced msfpayload in older articles*
 
 CrackMapExec
 [CrackMapExec - Cheatsheet](https://www.ivoidwarranties.tech/posts/pentesting-tuts/cme/crackmapexec-cheatsheet/)
+
+dirtyCow - handy Linux privilege escalation vuln
+[firefart/dirtycow](https://github.com/FireFart/dirtycow)
 
 ## Useful Bookmarks
 How-Tos
@@ -166,3 +176,4 @@ c:\Users\Administrator\Desktop>powershell.exe -ExecutionPolicy Bypass -NoLogo -N
 [A Script Kiddie’s guide to Passing OSCP on your first attempt](https://forum.hackthebox.eu/discussion/1730/a-script-kiddie-s-guide-to-passing-oscp-on-your-first-attempt)
 
 [Pentest Book](https://chryzsh.gitbooks.io/pentestbook/content/list_of_common_ports.html)
+[Upgrade from LFI to RCE via PHP Sessions](https://www.rcesecurity.com/2017/08/from-lfi-to-rce-via-php-sessions/)
